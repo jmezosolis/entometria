@@ -1,0 +1,16 @@
+{
+  "name": "Entometría",
+  "short_name": "Entometría",
+  "description": "Visión por computadora para medir insectos: cuerpo, patas, antenas, alas, nervaduras y conteos.",
+  "lang": "es",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "background_color": "#f7f4ee",
+  "theme_color": "#5c3a0e",
+  "icons": [
+    { "src": "icono-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "icono-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "icono-512-adaptable.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
