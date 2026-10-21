@@ -1,0 +1,3 @@
+InsectSAM (https://huggingface.co/martintomov/InsectSAM), de Martin Tomov, licencia Apache 2.0.
+Segment Anything de Meta AI afinado para insectos. Convertido a ONNX y cuantizado a 8 bits
+(decodificador con una sola máscara y entrada de caja) con scripts/exportar_insectsam.py.

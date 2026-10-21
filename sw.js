@@ -3,7 +3,7 @@
 // Lo guardado se entrega de inmediato y la versión nueva se baja por detrás: así la app abre igual
 // sin red, con mala señal o cuando la red responde pero se queda colgada (algunas redes móviles con
 // github.io), en vez de esperar a la red antes de mostrar nada.
-const CACHE = 'entometria-v2'
+const CACHE = 'entometria-v3'
 
 /** Lo que no se sabe si llegará: se espera a la red solo este tiempo cuando no hay nada guardado. */
 const ESPERA_MS = 8000
@@ -50,6 +50,8 @@ self.addEventListener('fetch', (evento) => {
   const pedido = evento.request
   const url = new URL(pedido.url)
   if (pedido.method !== 'GET' || url.origin !== self.location.origin) return
+  // Los modelos de la IA (cientos de MB) los guarda transformers.js en su propia caché; no se duplican aquí.
+  if (url.pathname.includes('/modelos/')) return
   if (url.pathname.includes('/assets/')) {
     // El código y los estilos llevan la versión en su nombre: si ya están guardados, no cambian.
     evento.respondWith(
